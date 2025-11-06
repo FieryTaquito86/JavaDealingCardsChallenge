@@ -9,7 +9,7 @@ public class Card {
     private boolean isFaceUp;
 
     //constructor that gives rank and suit
-    public Card(Suit suit, Rank rank) {
+    public Card(Rank rank, Suit suit) {
         this.rank = rank;
         this.suit = suit;
         isFaceUp = true; //cards start face down (you don't know what dealer has)
@@ -27,15 +27,11 @@ public class Card {
     //making a string to use in main summary
     //only show the string if isFaceUp is true
     //if isFaceUp is false, the card is face down, you cannot see the cards
+    @Override
     public String toString() {
-        //creating a string
-        String str = "";
-        if (isFaceUp) {
-            //using that string to combine the rank and suit
-            str += rank.printRank() + "of " + suit.printSuit();
-        } else {
-            str = "Face Down";
-        }
-        return str;
+        //instead of creating a string and usual if statement
+        // this line evalueates isFaceUp, if true, excecute and returns what comes after ?
+        // if false, java returns what comes after :
+        return isFaceUp ? rank.printRank() + " of " + suit.printSuit() : "Face Down";
     }
 }

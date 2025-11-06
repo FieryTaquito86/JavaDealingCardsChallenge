@@ -28,8 +28,9 @@ public class Hand {
         String hand = "";
         //loop through hand, for every card in hand, add to string
         for (Card c : cards) {
-            c += c.toString();
+            hand += c.toString() + ", "; //comma between cards
         }
+        if (!hand.isEmpty()) hand = hand.substring(0, hand.length() - 2); //removing last comma
         return hand;
     }
 
